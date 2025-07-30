@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premier legal services for individuals and businesses. Expert attorneys specializing in corporate law, family law, real estate, and criminal defense.">
+    <meta name="keywords" content="law firm, legal services, attorneys, lawyers, corporate law, family law, real estate law, criminal defense">
+    <meta name="author" content="Justice Legal Partners">
+    <meta property="og:title" content="Justice Legal Partners - Premier Legal Services">
+    <meta property="og:description" content="Expert legal representation for all your legal needs. Schedule a consultation today.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://justicelegal.com">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80">
+    <title>Justice Legal Partners - Premier Legal Services</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚖️</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a365d',
+                        secondary: '#2c5282',
+                        accent: '#e53e3e',
+                        light: '#f7fafc',
+                        dark: '#1a202c'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap');
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.9)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .team-member:hover .team-overlay {
+            opacity: 1;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: #2c5282;
+            box-shadow: 0 0 0 3px rgba(44, 82, 130, 0.2);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(to right, #1a365d, #2c5282);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .blog-card:hover {
+            transform: scale(1.02);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #e53e3e;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+        }
+    </style>
+</head>
+<body class="bg-light text-dark">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-balance-scale text-accent text-2xl mr-2"></i>
+                        <span class="text-2xl font-bold text-primary">Justice Legal</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-primary font-medium">Home</a>
+                    <a href="#services" class="nav-link text-gray-700 hover:text-primary font-medium">Services</a>
+                    <a href="#team" class="nav-link text-gray-700 hover:text-primary font-medium">Team</a>
+                    <a href="#blog" class="nav-link text-gray-700 hover:text-primary font-medium">Blog</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-primary font-medium">Contact</a>
+                    <button class="bg-primary hover:bg-secondary text-white px-5 py-2 rounded-md font-medium transition duration-300">
+                        <i class="fas fa-calendar-alt mr-2"></i>Schedule Consultation
+                    </button>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary focus:outline-none" aria-label="Toggle menu" aria-expanded="false">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 shadow-lg">
+            <div class="flex flex-col space-y-3">
+                <a href="#home" class="block py-2 text-gray-700 hover:text-primary font-medium">Home</a>
+                <a href="#services" class="block py-2 text-gray-700 hover:text-primary font-medium">Services</a>
+                <a href="#team" class="block py-2 text-gray-700 hover:text-primary font-medium">Team</a>
+                <a href="#blog" class="block py-2 text-gray-700 hover:text-primary font-medium">Blog</a>
+                <a href="#contact" class="block py-2 text-gray-700 hover:text-primary font-medium">Contact</a>
+                <button class="bg-primary hover:bg-secondary text-white px-4 py-2 rounded-md font-medium mt-2">
+                    <i class="fas fa-calendar-alt mr-2"></i>Schedule Consultation
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg pt-32 pb-20 md:pt-40 md:pb-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 fade-in">Expert Legal Representation</h1>
+                <p class="text-xl md:text-2xl text-blue-100 mb-10 max-w-3xl mx-auto fade-in">Protecting your rights and interests with over 25 years of combined legal experience</p>
+                <div class="fade-in">
+                    <button class="btn-primary text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition duration-300">
+                        <i class="fas fa-calendar-check mr-2"></i>Schedule a Consultation
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Our Legal Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We provide comprehensive legal solutions tailored to your specific needs</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-light p-8 rounded-xl shadow-md border border-gray-100 transition duration-300 fade-in">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-building text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Corporate Law</h3>
+                    <p class="text-gray-600 mb-4">Business formation, contracts, compliance, mergers, and acquisitions</p>
+                    <a href="#contact" class="text-secondary font-medium flex items-center">
+                        Learn more
+                        <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-light p-8 rounded-xl shadow-md border border-gray-100 transition duration-300 fade-in">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-users text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Family Law</h3>
+                    <p class="text-gray-600 mb-4">Divorce, child custody, adoption, and domestic relations</p>
+                    <a href="#contact" class="text-secondary font-medium flex items-center">
+                        Learn more
+                        <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-light p-8 rounded-xl shadow-md border border-gray-100 transition duration-300 fade-in">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-home text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Real Estate Law</h3>
+                    <p class="text-gray-600 mb-4">Property transactions, disputes, zoning, and landlord-tenant issues</p>
+                    <a href="#contact" class="text-secondary font-medium flex items-center">
+                        Learn more
+                        <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-light p-8 rounded-xl shadow-md border border-gray-100 transition duration-300 fade-in">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-gavel text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Criminal Defense</h3>
+                    <p class="text-gray-600 mb-4">Defense against criminal charges, appeals, and post-conviction relief</p>
+                    <a href="#contact" class="text-secondary font-medium flex items-center">
+                        Learn more
+                        <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Our Legal Team</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Experienced attorneys dedicated to achieving the best outcomes for our clients</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Team Member 1 -->
+                <div class="team-member bg-white rounded-xl shadow-md overflow-hidden fade-in">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Robert Johnson" class="w-full h-80 object-cover">
+                        <div class="team-overlay absolute inset-0 bg-primary bg-opacity-80 flex items-center justify-center opacity-0 transition duration-300">
+                            <div class="flex space-x-4">
+                                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-white hover:text-accent text-xl"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="text-white hover:text-accent text-xl"><i class="fab fa-twitter"></i></a>
+                                <a href="mailto:robert.johnson@justicelegal.com" class="text-white hover:text-accent text-xl"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary">Robert Johnson</h3>
+                        <p class="text-secondary font-medium mb-2">Senior Partner</p>
+                        <p class="text-gray-600">Specializes in corporate law with over 20 years of experience in complex business litigation.</p>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="team-member bg-white rounded-xl shadow-md overflow-hidden fade-in">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Sarah Williams" class="w-full h-80 object-cover">
+                        <div class="team-overlay absolute inset-0 bg-primary bg-opacity-80 flex items-center justify-center opacity-0 transition duration-300">
+                            <div class="flex space-x-4">
+                                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-white hover:text-accent text-xl"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="text-white hover:text-accent text-xl"><i class="fab fa-twitter"></i></a>
+                                <a href="mailto:sarah.williams@justicelegal.com" class="text-white hover:text-accent text-xl"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary">Sarah Williams</h3>
+                        <p class="text-secondary font-medium mb-2">Family Law Specialist</p>
+                        <p class="text-gray-600">Dedicated to helping families navigate difficult times with compassion and expertise.</p>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="team-member bg-white rounded-xl shadow-md overflow-hidden fade-in">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Michael Chen" class="w-full h-80 object-cover">
+                        <div class="team-overlay absolute inset-0 bg-primary bg-opacity-80 flex items-center justify-center opacity-0 transition duration-300">
+                            <div class="flex space-x-4">
+                                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-white hover:text-accent text-xl"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="text-white hover:text-accent text-xl"><i class="fab fa-twitter"></i></a>
+                                <a href="mailto:michael.chen@justicelegal.com" class="text-white hover:text-accent text-xl"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary">Michael Chen</h3>
+                        <p class="text-secondary font-medium mb-2">Criminal Defense Attorney</p>
+                        <p class="text-gray-600">Former prosecutor with a proven track record of defending clients' rights in criminal cases.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-primary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Client Testimonials</h2>
+                <p class="text-blue-200 max-w-2xl mx-auto">Hear what our clients have to say about our legal services</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-blue-900 bg-opacity-50 p-8 rounded-xl fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="mb-6 italic">"The team at Justice Legal Partners helped me navigate a complex business dispute. Their expertise and dedication resulted in a favorable outcome that exceeded my expectations."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-blue-800 flex items-center justify-center mr-4">
+                            <span class="font-bold">JD</span>
+                        </div>
+                        <div>
+                            <p class="font-bold">James Davidson</p>
+                            <p class="text-blue-200 text-sm">Business Client</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-blue-900 bg-opacity-50 p-8 rounded-xl fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="mb-6 italic">"During my difficult divorce proceedings, Sarah provided exceptional support and guidance. Her compassionate approach made a challenging time more manageable."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-blue-800 flex items-center justify-center mr-4">
+                            <span class="font-bold">MR</span>
+                        </div>
+                        <div>
+                            <p class="font-bold">Maria Rodriguez</p>
+                            <p class="text-blue-200 text-sm">Family Law Client</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-blue-900 bg-opacity-50 p-8 rounded-xl fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="mb-6 italic">"Michael's defense strategy was brilliant. He was able to get my charges reduced significantly. I'm grateful for his expertise and dedication to my case."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-blue-800 flex items-center justify-center mr-4">
+                            <span class="font-bold">TK</span>
+                        </div>
+                        <div>
+                            <p class="font-bold">Thomas Kim</p>
+                            <p class="text-blue-200 text-sm">Criminal Defense Client</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Legal Insights</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Stay informed with our latest articles and legal updates</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <div class="blog-card bg-light rounded-xl shadow-md overflow-hidden border border-gray-100 transition duration-300 fade-in">
+                    <img src="https://images.unsplash.com/photo-1589391886645-d51941baf7fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Corporate Law Update" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm text-secondary font-medium">Corporate Law</span>
+                        <h3 class="text-xl font-bold text-primary my-3">New Regulations for Small Businesses in 2023</h3>
+                        <p class="text-gray-600 mb-4">Understanding the latest compliance requirements for small businesses and how they impact your operations.</p>
+                        <a href="#" class="text-secondary font-medium flex items-center">
+                            Read more
+                            <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 2 -->
+                <div class="blog-card bg-light rounded-xl shadow-md overflow-hidden border border-gray-100 transition duration-300 fade-in">
+                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Family Law" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm text-secondary font-medium">Family Law</span>
+                        <h3 class="text-xl font-bold text-primary my-3">Navigating Child Custody During Divorce</h3>
+                        <p class="text-gray-600 mb-4">Key factors courts consider when determining child custody and how to prepare for your case.</p>
+                        <a href="#" class="text-secondary font-medium flex items-center">
+                            Read more
+                            <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 3 -->
+                <div class="blog-card bg-light rounded-xl shadow-md overflow-hidden border border-gray-100 transition duration-300 fade-in">
+                    <img src="https://images.unsplash.com/photo-1613195135159-98d50f472d0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Criminal Defense" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm text-secondary font-medium">Criminal Defense</span>
+                        <h3 class="text-xl font-bold text-primary my-3">Your Rights During a Criminal Investigation</h3>
+                        <p class="text-gray-600 mb-4">Understanding your constitutional rights and what to do if you're under investigation.</p>
+                        <a href="#" class="text-secondary font-medium flex items-center">
+                            Read more
+                            <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                    View All Articles
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Contact Us</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Schedule a consultation or ask us a question. We're here to help.</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2 fade-in">
+                    <form class="contact-form bg-white p-8 rounded-xl shadow-md">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Your name">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="your.email@example.com">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="(123) 456-7890">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="service" class="block text-gray-700 font-medium mb-2">Service Interested In</label>
+                            <select id="service" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                                <option value="">Select a service</option>
+                                <option value="corporate">Corporate Law</option>
+                                <option value="family">Family Law</option>
+                                <option value="real-estate">Real Estate Law</option>
+                                <option value="criminal">Criminal Defense</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="How can we help you?"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary text-white font-bold py-3 px-8 rounded-lg w-full transition duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="md:w-1/2 fade-in">
+                    <div class="bg-white p-8 rounded-xl shadow-md h-full">
+                        <h3 class="text-2xl font-bold text-primary mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex">
+                                <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                                    <i class="fas fa-map-marker-alt text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-gray-800">Our Office</h4>
+                                    <p class="text-gray-600">123 Legal Avenue<br>Lawyer District, NY 10001</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                                    <i class="fas fa-phone-alt text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-gray-800">Phone</h4>
+                                    <p class="text-gray-600">(212) 555-1234</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                                    <i class="fas fa-envelope text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-gray-800">Email</h4>
+                                    <p class="text-gray-600">info@justicelegal.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                                    <i class="fas fa-clock text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-gray-800">Office Hours</h4>
+                                    <p class="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 2:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-10">
+                            <h4 class="font-bold text-lg text-gray-800 mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition duration-300">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition duration-300">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition duration-300">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition duration-300">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-balance-scale text-accent text-2xl mr-2"></i>
+                        <span class="text-2xl font-bold">Justice Legal</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">Providing exceptional legal services with integrity and dedication since 1998.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Practice Areas</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Corporate Law</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Family Law</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Real Estate Law</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Criminal Defense</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Personal Injury</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Estate Planning</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Services</a></li>
+                        <li><a href="#team" class="text-gray-400 hover:text-white transition">Our Team</a></li>
+                        <li><a href="#blog" class="text-gray-400 hover:text-white transition">Blog</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li> <!-- This can remain as placeholder -->
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for legal updates and insights.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 w-full rounded-l-lg focus:outline-none text-dark">
+                        <button class="bg-accent hover:bg-red-700 text-white px-4 rounded-r-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500">
+                <p>&copy; 2023 Justice Legal Partners. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            const button = this;
+            menu.classList.toggle('hidden');
+            
+            // Update aria-expanded attribute
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            button.setAttribute('aria-expanded', !isExpanded);
+        });
+
+        // Fade-in animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('appear');
+                        // Unobserve to prevent re-triggering
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px' // Trigger 50px before element enters viewport
+            });
+            
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+
+        // Enhanced form validation with visual feedback
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Reset previous errors
+            this.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+            
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            let isValid = true;
+            
+            // Validation functions
+            const showError = (element, message) => {
+                element.classList.add('error');
+                element.focus();
+                alert(message); // In a real implementation, you'd use a better UI for errors
+                isValid = false;
+            };
+            
+            if (!name) {
+                showError(document.getElementById('name'), 'Please enter your name.');
+                return;
+            }
+            
+            if (!email) {
+                showError(document.getElementById('email'), 'Please enter your email address.');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showError(document.getElementById('email'), 'Please enter a valid email address.');
+                return;
+            }
+            
+            if (!phone) {
+                showError(document.getElementById('phone'), 'Please enter your phone number.');
+                return;
+            }
+            
+            // Phone validation (more flexible)
+            const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+            if (!phoneRegex.test(phone.replace(/[\s\-\(\)]/g, ''))) {
+                showError(document.getElementById('phone'), 'Please enter a valid phone number.');
+                return;
+            }
+            
+            if (!message) {
+                showError(document.getElementById('message'), 'Please enter your message.');
+                return;
+            }
+            
+            if (isValid) {
+                alert('Thank you for your message! We will contact you shortly.');
+                this.reset();
+            }
+        });
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            
+            if (!name || !email || !phone || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Simple email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            // Simple phone validation
+            const phoneRegex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+            if (!phoneRegex.test(phone)) {
+                alert('Please enter a valid phone number.');
+                return;
+            }
+            
+            // If all validations pass
+            alert('Thank you for your message! We will contact you shortly.');
+            this.reset();
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+    </script>
+    
+    <!-- Google Analytics (placeholder) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+</body>
+</html>
